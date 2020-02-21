@@ -1,0 +1,19 @@
+{
+  "name": "328/pets5",
+  "authors": [
+    {
+      "name": "Joshua Kristiansen",
+      "email": "jkristiansen@mail.greenriver.edu"
+    },
+    {
+      "name": "Ekampreet Kaur",
+      "email": "ekaur@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["./classes", "controller"]
+  }
+}

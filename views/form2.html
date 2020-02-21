@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+</head>
+<body>
+<form method="post" action="#">
+    <label>Name:
+        <input type="text" name="name" value="{{ @SESSION.pet->getName() }}">
+    </label>
+
+    <select name="color">
+		<label><option value="{{ @SESSION.pet->getColor() }}">{{ @SESSION.pet->getColor() }}</label><br>
+
+        <repeat group="{{ @colors }}" value="{{ @color }}">
+            <option value="{{ @color }}">{{ @color }}</option>
+        </repeat>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
