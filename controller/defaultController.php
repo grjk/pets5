@@ -4,6 +4,11 @@ class defaultController
 {
 	private $_f3; // Router
 
+    /**
+     * @var
+     */
+    private $_val;
+
 
 	public function __construct($f3)
 	{
@@ -81,5 +86,20 @@ class defaultController
 		$view = new Template();
 		echo $view->render("views/results.html");
 	}
+
+    public function views()
+    {
+        $view = new Template();
+        echo $view->render("views/views.html");
+    }
+
+   /* public function home()
+    {
+        $students = $GLOBALS['db']->getStudents();
+
+        $this->_f3->set('students', $students);
+        $template = new Template();
+        echo $template->render('views/all-students.html');
+    }*/
 
 }

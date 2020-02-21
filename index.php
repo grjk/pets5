@@ -10,9 +10,13 @@ require_once("model/validation-function.php");
 // Start session
 session_start();
 
+
 // Instantiate Fat-Free
 $f3 = Base::Instance();
+
+$db = new Database();
 $f3->set('colors', array('pink', 'green', 'blue'));
+
 
 $controller = new defaultController($f3);
 
@@ -35,6 +39,11 @@ $f3 -> route("GET|POST /order2", function ($f3) {
 
 $f3 -> route("GET|POST /results", function () {
     $GLOBALS['controller']->form3();
+});
+
+// Define a default route (view)
+$f3 -> route("GET /views", function () {
+    $GLOBALS['controller']->views();
 });
 
 
