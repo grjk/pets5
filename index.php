@@ -15,10 +15,10 @@ session_start();
 $f3 = Base::Instance();
 
 $db = new Database();
+$controller = new defaultController($f3);
+
 $f3->set('colors', array('pink', 'green', 'blue'));
 
-
-$controller = new defaultController($f3);
 
 // Define a default route (view)
 $f3 -> route("GET /", function () {
@@ -43,7 +43,7 @@ $f3 -> route("GET|POST /results", function () {
 
 // Define a default route (view)
 $f3 -> route("GET /views", function () {
-    $GLOBALS['controller']->views();
+    $GLOBALS['controller']->petInfo();
 });
 
 

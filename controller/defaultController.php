@@ -87,19 +87,12 @@ class defaultController
 		echo $view->render("views/results.html");
 	}
 
-    public function views()
+    public function petInfo()
     {
-        $view = new Template();
-        echo $view->render("views/views.html");
-    }
+        $pets = $GLOBALS['db']->getPets();
+        $this->_f3->set('Pets', $pets);
 
-   /* public function home()
-    {
-        $students = $GLOBALS['db']->getStudents();
-
-        $this->_f3->set('students', $students);
         $template = new Template();
-        echo $template->render('views/all-students.html');
-    }*/
-
+        echo $template->render('views/views.html');
+    }
 }

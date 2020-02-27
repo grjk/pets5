@@ -20,10 +20,11 @@ class Database
         }
     }
 
-    function __getPets()
+    function getPets()
     {
         //1. Define the query
-        $sql = "SELECT * FROM Pets";
+        $sql = "SELECT * FROM Pets
+                ORDER BY name";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
