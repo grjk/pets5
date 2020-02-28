@@ -20,7 +20,7 @@ class Database
         }
     }
 
-    function getPets()
+    function allPets()
     {
         //1. Define the query
         $sql = "SELECT * FROM Pets
@@ -40,7 +40,7 @@ class Database
     }
 
     function addPet($name, $color, $type){
-        $sql = "INSERT INTO Pets VALUES (DEFAULT,:name,:color,:type)";
+        $sql = "INSERT INTO Pets (PRIMARY, name, color, type) VALUES (DEFAULT,:name,:color,:type)";
 
         $statement = $this->_db->prepare($sql);
 

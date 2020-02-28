@@ -41,9 +41,8 @@ $f3 -> route("GET|POST /results", function () {
     $GLOBALS['controller']->form3();
 });
 
-// Define a default route (view)
-$f3 -> route("GET /views", function () {
-    $GLOBALS['controller']->petInfo();
+$f3 -> route("GET /show", function () {
+    $GLOBALS['controller']->show();
 });
 
 

@@ -83,13 +83,14 @@ class defaultController
 
 	public function form3()
 	{
+	    $GLOBALS['db']->addPets($_SESSION['pet'].getName(), $_SESSION['pet'].getColor(), $_SESSION['pet'].getType());
 		$view = new Template();
 		echo $view->render("views/results.html");
 	}
 
-    public function petInfo()
+    public function show()
     {
-        $pets = $GLOBALS['db']->getPets();
+        $pets = $GLOBALS['db']->allPets();
         $this->_f3->set('Pets', $pets);
 
         $template = new Template();
