@@ -38,4 +38,16 @@ class Database
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    function addPet($name, $color, $type){
+        $sql = "INSERT INTO Pets VALUES (DEFAULT,:name,:color,:type)";
+
+        $statement = $this->_db->prepare($sql);
+
+        $statement->bindParam(':color', $color);
+        $statement->bindParam(':name', $name);
+        $statement->bindParam(':type', $type);
+
+        $statement->execute();
+    }
 }
