@@ -8,8 +8,8 @@
 
     <h1>Database Pets List</h1>
     <div>
-        <repeat group="{{ @pets }}" value="{{ @Pets }}">
-            <li>{{ @Pets['petsId'] }} - {{ @Pets['name'] }}, {{ @Pets['color'] }}, {{ @Pets['type'] }}</li>
+        <repeat group="{{ @Pets }}" value="{{ @Pet }}">
+            <li>{{ @Pet['pets_id'] }} - {{ @Pet['pet_name'] }}, {{ @Pet['pet_color'] }}, {{ @Pet['pet_type'] }}</li>
         </repeat>
     </div>
 

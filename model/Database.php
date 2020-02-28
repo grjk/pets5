@@ -24,7 +24,7 @@ class Database
     {
         //1. Define the query
         $sql = "SELECT * FROM Pets
-                ORDER BY name";
+                ORDER BY pet_name";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -40,9 +40,10 @@ class Database
     }
 
     function addPet($name, $color, $type){
-        $sql = "INSERT INTO Pets (PRIMARY, name, color, type) VALUES (DEFAULT,:name,:color,:type)";
+        $sql = "INSERT INTO Pets (pet_id, pet_name, pet_color, pet_type) VALUES (DEFAULT,:name,:color,:type)";
 
-        $statement = $this->_db->prepare($sql);
+        $statement = $this->_dbh->prepare($sql);
+
 
         $statement->bindParam(':color', $color);
         $statement->bindParam(':name', $name);
